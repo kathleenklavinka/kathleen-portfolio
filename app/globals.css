@@ -2,32 +2,212 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+section {
+  scroll-margin-top: 6rem;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #F7F5F1;
+  color: #28324A;
+  position: relative;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+.stripes-lavender {
+  background-image: repeating-linear-gradient(
+    115deg,
+    #395176 0px,
+    #395176 22px,
+    #BDB0CA 22px,
+    #BDB0CA 44px
+  );
+}
+.stripes-blue {
+  background-image: repeating-linear-gradient(
+    115deg,
+    #395176 0px,
+    #395176 22px,
+    #90B1CF 22px,
+    #90B1CF 44px
+  );
+}
+
+::selection {
+  background-color: #395176;
+  color: #F7F5F1;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F5F1;
+}
+::-webkit-scrollbar-thumb {
+  background: #9295B7;
+  border-radius: 999px;
+  border: 2px solid #F7F5F1;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #395176;
+}
+
+.tape {
+  position: absolute;
+  width: 64px;
+  height: 22px;
+  background: rgba(247, 245, 241, 0.55);
+  border: 1px solid rgba(57, 81, 118, 0.15);
+  box-shadow: 0 2px 4px rgba(40, 50, 74, 0.08);
+}
+
+/* Reusable glassmorphism surface: frosted, translucent, subtly bordered. */
+.glass {
+  background: rgba(247, 245, 241, 0.08);
+  border: 1px solid rgba(247, 245, 241, 0.18);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+}
+.glass-light {
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+}
+
+/* Small gradient rule used under eyebrow labels for a bit of color accent. */
+.accent-rule {
+  display: inline-block;
+  height: 3px;
+  width: 28px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #90b1cf, #bdb0ca, #9295b7);
+}
+
+/* Eased, multi-stop fades for smooth section-to-section color blends.
+   A plain 2-stop alpha gradient reads as a harsh band; these approximate
+   an ease curve so the transition feels gradual at both ends. */
+.fade-to-shell {
+  background: linear-gradient(
+    to bottom,
+    rgba(247, 245, 241, 0) 0%,
+    rgba(247, 245, 241, 0.04) 20%,
+    rgba(247, 245, 241, 0.14) 38%,
+    rgba(247, 245, 241, 0.32) 54%,
+    rgba(247, 245, 241, 0.58) 68%,
+    rgba(247, 245, 241, 0.82) 82%,
+    rgba(247, 245, 241, 0.96) 92%,
+    rgba(247, 245, 241, 1) 100%
+  );
+}
+.fade-from-shell {
+  background: linear-gradient(
+    to bottom,
+    rgba(247, 245, 241, 1) 0%,
+    rgba(247, 245, 241, 0.96) 8%,
+    rgba(247, 245, 241, 0.82) 18%,
+    rgba(247, 245, 241, 0.58) 32%,
+    rgba(247, 245, 241, 0.32) 46%,
+    rgba(247, 245, 241, 0.14) 62%,
+    rgba(247, 245, 241, 0.04) 80%,
+    rgba(247, 245, 241, 0) 100%
+  );
+}
+.glow-ring {
+  position: relative;
+}
+.glow-ring::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #90b1cf, #bdb0ca, #9295b7);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.glow-ring:hover::before {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 22s linear infinite;
+}
+
+@keyframes shimmer {
+  to { background-position: -200% center; }
+}
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+body {
+  animation: pageIn 0.6s ease-out;
+}
+
+@keyframes blobFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(24px, -32px) scale(1.08); }
+}
+@keyframes blobFloatAlt {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-28px, 26px) scale(0.95); }
+}
+@keyframes blobFloatSlow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(18px, 20px) scale(1.1); }
+}
+.animate-blob {
+  animation: blobFloat 16s ease-in-out infinite;
+}
+.animate-blob-alt {
+  animation: blobFloatAlt 20s ease-in-out infinite;
+  animation-delay: -6s;
+}
+.animate-blob-slow {
+  animation: blobFloatSlow 24s ease-in-out infinite;
+  animation-delay: -12s;
+}
+
+/* Multi-hue gradient blobs, each blending a different pair from the palette
+   so the background reads as colorful rather than flat blurred circles. */
+.blob-a { background: radial-gradient(circle at 30% 30%, #90B1CF, #BDB0CA 75%); }
+.blob-b { background: radial-gradient(circle at 65% 35%, #BDB0CA, #9295B7 75%); }
+.blob-c { background: radial-gradient(circle at 40% 65%, #C9DDE3, #90B1CF 75%); }
+.blob-d { background: radial-gradient(circle at 50% 50%, #9295B7, #395176 75%); }
+.blob-e { background: radial-gradient(circle at 35% 60%, #C9DDE3, #BDB0CA 75%); }
+.blob-f { background: radial-gradient(circle at 60% 40%, #395176, #90B1CF 75%); }
+.blob-g { background: radial-gradient(circle at 45% 45%, #90B1CF, #395176 75%); }
+.blob-h { background: radial-gradient(circle at 55% 55%, #BDB0CA, #C9DDE3 75%); }
