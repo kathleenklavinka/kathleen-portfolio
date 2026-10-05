@@ -9,7 +9,7 @@ export default function Projects() {
   const shown = projects.slice(0, HOME_PROJECT_COUNT);
 
   return (
-    <section id="work" className="relative overflow-hidden px-6 py-24">
+    <section id="work" className="relative overflow-hidden px-6 py-24 pt-8">
       <div className="relative mx-auto max-w-content">
         <div className="mb-16">
           <div>

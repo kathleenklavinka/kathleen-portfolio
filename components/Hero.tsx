@@ -40,7 +40,7 @@ export default function Hero() {
       id="top"
       ref={sectionRef}
       onMouseMove={handleMouseMove}
-      className="relative overflow-hidden px-6 pb-12 pt-40 sm:pt-48"
+      className="relative overflow-hidden px-6 pb-12 pt-40 sm:pt-48 lg:flex lg:min-h-[calc(100svh-56px)] lg:items-center lg:pb-16 lg:pt-28"
     >
       <motion.div style={{ x: nearX, y: nearY }} className="contents">
         <div
@@ -70,10 +70,12 @@ export default function Hero() {
           className="blob-f animate-blob-slow pointer-events-none absolute -bottom-24 left-10 h-72 w-72 rounded-full opacity-45 blur-[110px]"
         />
       </motion.div>
-      <div className="relative mx-auto max-w-content">
+
+      <div className="relative mx-auto w-full max-w-content">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="font-sans text-sm tracking-wide text-navy/70"
         >
@@ -87,7 +89,8 @@ export default function Hero() {
                 key={word}
                 custom={i}
                 initial="hidden"
-                animate="visible"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.3 }}
                 variants={wordVariants}
                 className="mr-4 inline-block"
               >
@@ -98,7 +101,8 @@ export default function Hero() {
           <motion.span
             custom={2}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
             variants={wordVariants}
             className="block bg-gradient-to-r from-navy via-periwinkle to-navy bg-[length:200%_auto] bg-clip-text italic text-transparent [animation:shimmer_6s_linear_infinite]"
           >
@@ -108,9 +112,10 @@ export default function Hero() {
 
         <motion.p
           initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-6 max-w-xl font-sans text-base text-ink/70"
+          className="mt-6 max-w-xl font-sans text-sm text-ink/70 sm:text-base lg:mt-5"
         >
           Informatics student building at the intersection of{" "}
           <span className="text-ink">AI</span>,{" "}
@@ -121,9 +126,10 @@ export default function Hero() {
 
         <motion.div
           initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-8 flex flex-wrap items-center gap-4"
+          className="mt-8 flex flex-wrap items-center gap-4 lg:mt-6"
         >
           <a
             href="#work"

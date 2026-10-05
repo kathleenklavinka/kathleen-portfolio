@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const socials = [
-  { label: "GitHub", href: "https://github.com/yourusername" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/yourusername" },
+  { label: "GitHub", href: "https://github.com/kathleenklavinka" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/kathleen-klavinka" },
 ];
 
 function useJakartaClock() {
@@ -86,10 +86,10 @@ export default function Footer() {
           <div className="my-8 h-px w-full bg-gradient-to-r from-shell/20 via-shell/5 to-transparent" />
 
           <a
-            href="mailto:hello@example.com"
+            href="mailto:kathleen.klavinka@gmail.com"
             className="glass glow-ring inline-flex rounded-full px-6 py-3 font-sans text-sm text-shell/90 transition-colors hover:bg-shell/15 hover:text-shell"
           >
-            hello@example.com
+            kathleen.klavinka@gmail.com
           </a>
         </motion.div>
 

@@ -88,30 +88,37 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
               <span className="italic text-navy">Overview</span>
             </h2>
             {project.overview.split("\n\n").map((para) => (
-              <p key={para} className="mt-4 font-sans text-base leading-relaxed text-ink/75">
+              <p key={para} className="mt-4 font-sans text-base leading-relaxed text-ink/75 text-justify">
                 {para}
               </p>
             ))}
           </section>
 
-          {project.highlights && project.highlights.length > 0 && (
+          {project.features && project.features.length > 0 && (
             <section className="mt-12">
               <h2 className="font-serif text-2xl text-ink sm:text-3xl">
-                <span className="italic text-navy">Highlights</span>
+                <span className="italic text-navy">Key Features</span>
               </h2>
-              <ul className="mt-4 flex flex-wrap gap-2">
-                {project.highlights.map((h) => (
+              <ul className="font-sans mt-6 grid gap-4 sm:grid-cols-2">
+                {project.features.map((f, i) => (
                   <li
-                    key={h}
-                    className={`rounded-full px-4 py-2 font-sans text-sm text-ink/80 ${accentBg[accent]}`}
+                    key={f.title}
+                    className="group rounded-2xl border border-ink/10 bg-white/50 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-navy/30 hover:shadow-md"
                   >
-                    {h}
+                    <span
+                      className={`flex h-9 w-9 items-center justify-center rounded-full font-sans text-xs font-semibold text-navy ${accentBg[accent]}`}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="mt-4 font-serif text-lg text-ink">{f.title}</h3>
+                    <p className="mt-1.5 font-sans text-sm leading-relaxed text-ink/70">
+                      {f.description}
+                    </p>
                   </li>
                 ))}
               </ul>
             </section>
           )}
-
 
           {project.gallery && project.gallery.length > 0 && (
             <section className="mt-12 grid gap-4 sm:grid-cols-2">
@@ -132,18 +139,28 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
           )}
 
           <div className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-ink/10 pt-8">
-            {project.link ? (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full bg-navy px-5 py-2.5 font-sans text-xs font-semibold uppercase tracking-wide text-shell transition-colors hover:bg-ink"
-              >
-                Visit project ↗
-              </a>
-            ) : (
-              <span />
-            )}
+            <div className="flex flex-wrap items-center gap-3">
+              {project.demo && (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full bg-navy px-5 py-2.5 font-sans text-xs font-semibold uppercase tracking-wide text-shell transition-colors hover:bg-ink"
+                >
+                  Live Demo ↗
+                </a>
+              )}
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-ink/25 px-5 py-2.5 font-sans text-xs font-semibold uppercase tracking-wide text-ink/80 transition-colors hover:border-navy hover:bg-navy hover:text-shell"
+                >
+                  GitHub ↗
+                </a>
+              )}
+            </div>
             {next.slug !== project.slug && (
               <Link
                 href={`/projects/${next.slug}`}

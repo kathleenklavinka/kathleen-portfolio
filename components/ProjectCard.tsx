@@ -18,7 +18,7 @@ function ArrowIcon() {
   return (
     <svg
       viewBox="0 0 24 24"
-      className="h-3.5 w-3.5 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+      className="h-3.5 w-3.5 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
       fill="none"
       strokeWidth={2}
       stroke="currentColor"
@@ -62,11 +62,9 @@ export default function ProjectCard({
         <div
           className={`relative -mt-4 rounded-b-2xl rounded-tr-2xl px-6 pb-6 pt-8 shadow-[0_10px_24px_rgba(40,50,74,0.06)] transition-shadow duration-300 group-hover:shadow-[0_20px_40px_rgba(40,50,74,0.16)] ${accentClass(index)}`}
         >
-          <div className="flex items-center gap-2">
-            <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-ink/45">
-              {project.tags[0]}
-            </span>
-          </div>
+          <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-ink/45">
+            {project.tags[0]}
+          </span>
           <h3 className="mt-1 font-serif text-2xl text-ink sm:text-3xl">{project.title}</h3>
           <div className="mt-3 flex items-center gap-3">
             {project.stack.map((item) => (
@@ -80,10 +78,12 @@ export default function ProjectCard({
             <span className="font-semibold text-ink/70">{project.role}</span>
           </div>
 
-          <span className="group/link mt-4 inline-flex w-full items-center gap-1.5 border-t border-ink/10 pt-4 font-sans text-xs font-semibold uppercase tracking-wide text-ink/70 transition-colors group-hover:text-ink">
-            View Project
-            <ArrowIcon />
-          </span>
+          <div className="mt-4 border-t border-ink/10 pt-4">
+            <span className="group/btn inline-flex items-center gap-1.5 rounded-full bg-navy px-4 py-2 font-sans text-xs font-semibold uppercase tracking-wide text-shell transition-colors group-hover:bg-ink">
+              Details
+              <ArrowIcon />
+            </span>
+          </div>
         </div>
       </Link>
     </motion.article>
