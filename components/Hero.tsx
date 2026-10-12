@@ -45,7 +45,7 @@ export default function Hero() {
       <motion.div style={{ x: nearX, y: nearY }} className="contents">
         <div
           aria-hidden
-          className="blob-a animate-blob pointer-events-none absolute -left-24 -top-16 h-[26rem] w-[26rem] rounded-full opacity-60 blur-[110px]"
+          className="blob-a animate-blob pointer-events-none absolute -left-24 -top-16 h-[26rem] w-[26rem] rounded-full opacity-70 blur-[110px]"
         />
         <div
           aria-hidden
@@ -53,21 +53,21 @@ export default function Hero() {
         />
         <div
           aria-hidden
-          className="blob-h animate-blob pointer-events-none absolute left-1/2 top-16 h-56 w-56 rounded-full opacity-45 blur-[90px]"
+          className="blob-h animate-blob pointer-events-none absolute left-1/2 top-16 h-56 w-56 rounded-full opacity-55 blur-[90px]"
         />
       </motion.div>
       <motion.div style={{ x: farX, y: farY }} className="contents">
         <div
           aria-hidden
-          className="blob-c animate-blob pointer-events-none absolute left-1/3 top-40 h-80 w-80 rounded-full opacity-50 blur-[100px]"
+          className="blob-c animate-blob pointer-events-none absolute left-1/3 top-40 h-80 w-80 rounded-full opacity-55 blur-[100px]"
         />
         <div
           aria-hidden
-          className="blob-d animate-blob-slow pointer-events-none absolute right-10 top-24 h-64 w-64 rounded-full opacity-40 blur-[100px]"
+          className="blob-d animate-blob-slow pointer-events-none absolute right-10 top-24 h-64 w-64 rounded-full opacity-50 blur-[100px]"
         />
         <div
           aria-hidden
-          className="blob-f animate-blob-slow pointer-events-none absolute -bottom-24 left-10 h-72 w-72 rounded-full opacity-45 blur-[110px]"
+          className="blob-f animate-blob-slow pointer-events-none absolute -bottom-24 left-10 h-72 w-72 rounded-full opacity-55 blur-[110px]"
         />
       </motion.div>
 

@@ -91,27 +91,38 @@ export default function About() {
             className="mt-6 space-y-4 font-sans text-sm leading-relaxed text-shell/75 sm:text-base"
           >
             <p>
-              I&apos;m an Informatics student based in Jakarta, working across
-              machine learning, front-end development, and visual design. I
-              like taking an idea from raw data or a rough sketch all the way
-              to something that actually works.
+              I&apos;m an Informatics Engineering student at Universitas
+              Tarumanagara in Jakarta, working across web development, machine
+              learning and deep learning, and visual design. I like taking an idea from raw data
+              or a rough sketch all the way to something that actually works.
             </p>
             <p>
-              On the front-end side, I build responsive interfaces with{" "}
-              <span className="text-shell">TypeScript, Next.js, and React.js</span>,
-              from coursework to team products like Inventix. On the machine
-              learning side, I work in{" "}
+              On the web side, I build responsive interfaces with{" "}
+              <span className="text-shell">TypeScript, Next.js, and React.js</span>
+              , styled with Tailwind CSS. I also work on the server side with{" "}
+              <span className="text-shell">
+                Node.js, Express, Laravel, and Prisma
+              </span>{" "}
+              over PostgreSQL and MySQL. My projects include Inventix, an
+              inventory system for a food business, and Spicy Maguro, a web app
+              for stock, sales, and suppliers.
+            </p>
+            <p>
+              On the machine learning and deep learning side, I work in{" "}
               <span className="text-shell">Python</span> with{" "}
-              <span className="text-shell">Scikit-learn and TensorFlow/Keras</span>,
-              moving from data analysis to training a working model.
+              <span className="text-shell">
+                Pandas, NumPy, Scikit-learn, and TensorFlow/Keras
+              </span>
+              , from data analysis to comparing models like Logistic Regression,
+              Random Forest, and XGBoost.
             </p>
             <p>
-              I also design with the Adobe suite (
+              I also design with Figma and the Adobe suite (
               <span className="text-shell">
                 Photoshop, Illustrator, and After Effects
               </span>
-              ) for feed design, motion graphics, and visual assets, which
-              keeps everything I build usable, not just functional.
+              ) for UI prototypes, feed design, and motion graphics, which keeps
+              everything I build usable, not just functional.
             </p>
           </motion.div>
         </div>
