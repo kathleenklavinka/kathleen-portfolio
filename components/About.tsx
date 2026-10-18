@@ -93,28 +93,24 @@ export default function About() {
             <p>
               I&apos;m an Informatics Engineering student at Universitas
               Tarumanagara in Jakarta, working across web development, machine
-              learning and deep learning, and visual design. I like taking an idea from raw data
-              or a rough sketch all the way to something that actually works.
+              learning and deep learning, and visual design. I like taking an
+              idea from raw data or a rough sketch all the way to something that
+              actually works.
             </p>
             <p>
               On the web side, I build responsive interfaces with{" "}
               <span className="text-shell">TypeScript, Next.js, and React.js</span>
-              , styled with Tailwind CSS. I also work on the server side with{" "}
+              , styled with Tailwind CSS, and work on the server side with{" "}
               <span className="text-shell">
                 Node.js, Express, Laravel, and Prisma
               </span>{" "}
-              over PostgreSQL and MySQL. My projects include Inventix, an
-              inventory system for a food business, and Spicy Maguro, a web app
-              for stock, sales, and suppliers.
-            </p>
-            <p>
-              On the machine learning and deep learning side, I work in{" "}
-              <span className="text-shell">Python</span> with{" "}
+              over PostgreSQL and MySQL. For machine learning and deep learning,
+              I work in <span className="text-shell">Python</span> with{" "}
               <span className="text-shell">
                 Pandas, NumPy, Scikit-learn, and TensorFlow/Keras
               </span>
-              , from data analysis to comparing models like Logistic Regression,
-              Random Forest, and XGBoost.
+              , from data analysis to comparing models like Logistic
+              Regression, Random Forest, and XGBoost.
             </p>
             <p>
               I also design with Figma and the Adobe suite (

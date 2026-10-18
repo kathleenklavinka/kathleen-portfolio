@@ -45,7 +45,7 @@ export default function Hero() {
       <motion.div style={{ x: nearX, y: nearY }} className="contents">
         <div
           aria-hidden
-          className="blob-a animate-blob pointer-events-none absolute -left-24 -top-16 h-[26rem] w-[26rem] rounded-full opacity-70 blur-[110px]"
+          className="blob-a animate-blob pointer-events-none absolute -left-24 -top-16 h-[26rem] w-[26rem] rounded-full opacity-7 blur-[110px]"
         />
         <div
           aria-hidden
@@ -117,11 +117,11 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-6 max-w-xl font-sans text-sm text-ink/70 sm:text-base lg:mt-5"
         >
-          Informatics student building at the intersection of{" "}
-          <span className="text-ink">AI</span>,{" "}
-          <span className="text-ink">Machine Learning</span>, and{" "}
-          <span className="text-ink">Web Development</span>, with a design
-          eye that keeps things usable, not just functional.
+        Informatics student building at the intersection of{" "}
+        <span className="text-ink">Web Development</span>,{" "}
+        <span className="text-ink">Machine Learning</span>, and{" "}
+        <span className="text-ink">Deep Learning</span>, with a design
+        eye that keeps things usable, not just functional.
         </motion.p>
 
         <motion.div

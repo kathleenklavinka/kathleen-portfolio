@@ -3,7 +3,7 @@
 const items = [
   "MACHINE LEARNING",
   "WEB DEVELOPMENT",
-  "RESEARCH WRITING",
+  "DEEP LEARNING",
 ];
 
 export default function Marquee() {

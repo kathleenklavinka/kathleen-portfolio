@@ -50,12 +50,6 @@ export default function Navbar() {
             <span className="absolute inset-x-4 -bottom-0.5 h-px origin-left scale-x-0 bg-navy transition-transform duration-300 group-hover:scale-x-100" />
           </Link>
         ))}
-        <Link
-          href="/#contact"
-          className="ml-1 rounded-full border border-navy/25 px-4 py-2 font-sans text-sm text-navy transition-colors duration-300 hover:bg-navy hover:text-shell"
-        >
-          Resume
-        </Link>
       </nav>
     </motion.header>
   );
