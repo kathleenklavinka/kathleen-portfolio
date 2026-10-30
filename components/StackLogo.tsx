@@ -9,6 +9,12 @@ import {
   siPostgresql,
   siFlutter,
   siDart,
+  siExpress,
+  siTailwindcss,
+  siSqlite,
+  siHtml5,
+  siCss,
+  siJavascript,
   type SimpleIcon,
 } from "simple-icons";
 
@@ -23,6 +29,12 @@ const icons: Record<string, SimpleIcon> = {
   Postgres: siPostgresql,
   Flutter: siFlutter,
   Dart: siDart,
+  Express: siExpress,
+  Tailwind: siTailwindcss,
+  SQLite: siSqlite,
+  HTML: siHtml5,
+  CSS: siCss,
+  JS: siJavascript,
 };
 
 export default function StackLogo({ name }: { name: string }) {

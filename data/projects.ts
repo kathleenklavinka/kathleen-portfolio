@@ -36,7 +36,6 @@ export const projects: Project[] = [
     stack: ["TS", "React", "Node", "Prisma", "Postgres"],
     image: "/projects/inventix.png",
     link: "https://github.com/kathleenklavinka/inventix-fe.git",
-    demo: "http://localhost:3000/projects",
     overview:
       "Inventix is a stock management web app built as a group project by a team of five students to help small businesses keep track of their stock, record transactions, and read reports without juggling spreadsheets. Small businesses often track inventory by hand, which makes it easy to lose sight of what is left and what has sold. Our team of five, each with a different role, built it with TypeScript, React, and Node, covering both the interface and the backend logic.\n\nThe app was developed for our partner, FOMO Foccacia Modern, but it is designed to be universal so any business can use it. I worked as the UI/UX designer and frontend developer, responsible for shaping the design and building the interface people interact with every day.",
     features: [
@@ -85,7 +84,7 @@ export const projects: Project[] = [
     stack: ["TS", "Next", "Tailwind", "Prisma", "SQLite"],
     image: "/projects/notte-azzura.png",
     link: "https://github.com/kathleenklavinka/notte-azzura",
-    demo: "http://localhost:3001/",
+    demo: "http://notte-azzura.vercel.app/",
     overview:
       "Notte Azzura is a pizza restaurant website built by a group of five students for a frontend programming course. The full site was a team effort, and I was responsible for three pages: Events, Event Detail, and Contact, along with the database and API work behind them.\n\nThe Events page lists every upcoming event with its date, price, category, and how full it is, and guests can filter by category. Each card opens its own page through dynamic routing, where guests can register, and spots are checked on the server so an event can never be overbooked. It is built with Next.js, Prisma, and SQLite, and every page is responsive from mobile to desktop.",
     features: [
@@ -169,16 +168,45 @@ export const projects: Project[] = [
   },
 
   {
-    slug: "warung-pintar",
-    year: "2025",
-    title: "Warung Pintar",
-    role: "Frontend Developer",
+    slug: "sonata",
+    year: "2026",
+    title: "Sonata Karaoke",
+    role: "Full-Stack Developer",
     description:
-      "A dummy point-of-sale web app for neighborhood warungs, with quick checkout, daily sales summary, and low-stock alerts.",
-    tags: ["Web App", "Point of Sale"],
-    stack: ["TS", "Next", "Node"],
+      "A karaoke room booking web app with live slot availability and an admin panel for managing rooms.",
+    tags: ["Web App", "Booking System"],
+    stack: ["HTML", "CSS", "JS", "Express", "Prisma", "Postgres"],
+    image: "/projects/sonata.png",
+    link: "https://github.com/kathleenklavinka/sonata-karaoke",
+    demo: "https://sonata-karaoke.vercel.app/",
     overview:
-      "Placeholder project. Warung Pintar is a made-up point-of-sale app used to fill this slot until a real project is added.",
+      "Sonata is a web app for booking karaoke rooms. Customers can browse available rooms, pick a date and time slot, and pay online, while admins manage the rooms and monitor bookings.\n\nThe backend is built with Express and Prisma on PostgreSQL, with JWT authentication and role-based access for customers and admins. Input is validated with Zod, and booking slots are checked against existing active bookings so a room can never be double booked. Unpaid bookings expire automatically, and payments are handled through Midtrans. The app is deployed on Vercel with a Supabase database.",
+    features: [
+      {
+        title: "Authentication and roles",
+        description: "Register and login with JWT, with separate access for customers and admins.",
+      },
+      {
+        title: "Room browsing",
+        description: "Customers can view active rooms with their capacity, description, and price per hour.",
+      },
+      {
+        title: "Live slot availability",
+        description: "Picking a date shows which time slots are already booked, so overlapping bookings are blocked.",
+      },
+      {
+        title: "Booking flow",
+        description: "A booking starts as pending, becomes confirmed once paid, and expires automatically if payment is not completed in time.",
+      },
+      {
+        title: "Online payment",
+        description: "Payments run through Midtrans, with each payment tied to a single booking and tracked as pending, paid, or failed.",
+      },
+      {
+        title: "Admin room management",
+        description: "Admins can add, edit, and deactivate rooms without deleting their booking history.",
+      },
+    ],
   },
 ];
 
